@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./Styles/App.css";
+import { BrowserRouter } from "react-router-dom";
+import {
+  Hero,
+  Navbar,
+  About,
+  Tech,
+  Experience,
+  Works,
+  Feedbacks,
+  Contact,
+  EarthCanvas,
+  BallCanvas,
+  ComputersCanvas,
+  StarsCanvas,
+} from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <BrowserRouter>
+        <div className="relative z-0 bg-primary">
+          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            <Navbar />
+            <Hero />
+          </div>
+          <div>
+            <About />
+            <Experience />
+            <Tech />
+            <Works />
+            <Feedbacks />
+          </div>
+          <div className="relative z-0">
+            <Contact />
+            <StarsCanvas />
+          </div>
+        </div>
+      </BrowserRouter>
+    </main>
   );
 }
 
